@@ -1,0 +1,77 @@
+body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background: rgb(0, 204, 255);
+          }
+
+          .container {
+            width: 300px;
+            height: 400px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            perspective: 1000px;
+            transform-style: preserve-3d;
+          }
+
+          .container .front img {
+            width: 100%;
+            border-radius: 10px;
+          }
+
+          .flipcard {
+            position: relative;
+            transition: 0.8s;
+            transform-style: preserve-3d;
+          }
+
+          .flipcard .front {
+            position: absolute;
+            top: 0;
+            left: 0;
+            backface-visibility: hidden;
+            transition: 0.8s;
+            transform-style: preserve-3d;
+            z-index: 100;
+            border-radius: 8px;
+            box-shadow: 90 90px 90px rgba(0, 0, 0, 0.5);
+          }
+  
+          .flipcard .back {
+            position: absolute;
+            top: 0;
+            left: 0;
+            backface-visibility: hidden;
+            transition: 0.8s;
+            transform-style: preserve-3d;
+            z-index: 99;
+            border-radius: 30px;
+            box-shadow: -3px 3px 3px #4f4f4f;
+            background: rgb(0, 0, 0);
+            width: 350px; 
+            height: 450px;
+            transform: rotateY(180deg);
+            text-align: center;
+            line-height: 210px;
+          }
+          .container:hover .front {
+            transform: rotateY(-180deg);
+          }
+          .container:hover .back {
+            transform: rotateY(0deg);
+          }
+
+          h3 {
+            margin: 0;
+            padding:0 ;
+            font-size: 24px;
+            text-transform: uppercase;
+           letter-spacing: 5px;
+            margin-top: 5px;
+           color: #d4ff00; filter: drop-shadow(-2px 2px 3px #ff5900) ;
+animation: animate_text 0.8s steps(1) infinite;
+}
+
+    
